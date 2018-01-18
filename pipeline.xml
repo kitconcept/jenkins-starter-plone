@@ -12,7 +12,7 @@
       <configVersion>2</configVersion>
       <userRemoteConfigs>
         <hudson.plugins.git.UserRemoteConfig>
-          <url>https://github.com/kitconcept/jenkins-pipeline-examples.git</url>
+          <url>https://github.com/kitconcept/jenkins-starter-plone.git</url>
         </hudson.plugins.git.UserRemoteConfig>
       </userRemoteConfigs>
       <branches>
