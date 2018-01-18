@@ -33,7 +33,7 @@ java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin checkstyle
 sudo service jenkins restart
 sleep 10
 while [[ $(curl -s -w "%{http_code}" http://localhost:8080 -o /dev/null) != "200" ]]; do  sleep 5; done;
-# java -jar jenkins-cli.jar -s http://localhost:8080 create-job pipeline < /home/vagrant/jenkins-pipeline-examples/pipeline.xml
+java -jar jenkins-cli.jar -s http://localhost:8080 create-job pipeline < /home/vagrant/jenkins-starter-plone/pipeline.xml
 
 # robot framework
 # pip install robotframework
