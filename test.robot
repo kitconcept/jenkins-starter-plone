@@ -42,10 +42,13 @@ Scenario: Create Pipeline Job
   Click Element  css=.org_jenkinsci_plugins_workflow_job_WorkflowJob
   Click button  OK
 
+Scenario: Run Pipeline Job
+  Go to  ${SERVER}/job/pipeline
+  Wait until page contains  Jenkins
+  Page should contain  Pipeline pipeline
 
 *** Keywords ***
 
 Test Setup
   Open Browser  ${SERVER}  ${BROWSER}
   Set Window Size  1024  768
-
