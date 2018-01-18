@@ -38,3 +38,10 @@ java -jar jenkins-cli.jar -s http://localhost:8080 create-job pipeline < /home/v
 # robot framework
 # pip install robotframework
 # pip install robotframework-selenium2library
+
+# Plone
+sudo apt-get install -y build-essential git-core python2.7 python2.7-dev python-virtualenv python-tk
+# Pillow
+sudo apt-get install -y zlib1g-dev libfreetype6 libfreetype6-dev libpng12-dev libjpeg62-dev
+# Lxml
+sudo apt-get install -y python-lxml libxslt1-dev libxml2-dev libxml2-utils libssl-dev libssl-doc

@@ -22,6 +22,7 @@ pipeline {
       steps {
         deleteDir()
         checkout scm
+        sh 'virtualenv .'
       }
     }
 
