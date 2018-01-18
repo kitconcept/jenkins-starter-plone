@@ -68,7 +68,16 @@ pipeline {
       steps {
         deleteDir()
         checkout scm
-        sh "echo 'Run Acceptance Tests'"
+        sh 'virtualenv .'
+        sh 'bin/pip install -r requirements.txt'
+        wrap([$class: 'Xvfb']) {
+          sh 'bin/pybot test1.robot'
+        }
+      }
+      post {
+        always {
+          stash includes: 'output.xml', name: 'acceptance-tests'
+        }
       }
     }
 
