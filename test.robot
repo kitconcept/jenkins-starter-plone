@@ -46,6 +46,8 @@ Scenario: Run Pipeline Job
   Go to  ${SERVER}/job/pipeline
   Wait until page contains  Jenkins
   Page should contain  Pipeline pipeline
+  Click link  css=.task-link
+  Wait until page contains  #1
 
 *** Keywords ***
 
