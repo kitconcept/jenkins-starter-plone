@@ -43,6 +43,7 @@ Scenario: Create Pipeline Job
   Click button  OK
 
 Scenario: Run Pipeline Job
+  Go to  ${SERVER}/job/pipeline/build
   Go to  ${SERVER}/job/pipeline
   Wait until page contains  Jenkins
   Page should contain  Pipeline pipeline
