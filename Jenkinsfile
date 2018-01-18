@@ -23,6 +23,7 @@ pipeline {
         deleteDir()
         checkout scm
         sh 'virtualenv .'
+        sh 'bin/pip install -r requirements-plone.txt'
       }
     }
 
