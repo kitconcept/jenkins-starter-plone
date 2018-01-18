@@ -22,8 +22,17 @@ pipeline {
       steps {
         deleteDir()
         checkout scm
+        // Create virtual Python environment
         sh 'virtualenv .'
+        // Install setuptools and zc.buildout
         sh 'bin/pip install -r requirements-plone.txt'
+        // Build Plone
+        sh 'bin/buildout'
+        // Create a tar archive with the Plone build
+        // (passing around too many files makes the build slow)
+        sh 'tar cfz backend.tgz bin develop-eggs include lib parts src *.cfg requirements-plone.txt'
+        // Stash the tar archive for later stages
+        stash includes: 'backend.tgz', name: 'backend.tgz'
       }
     }
 
