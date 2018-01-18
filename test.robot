@@ -46,6 +46,7 @@ Scenario: Run Pipeline Job
   Go to  ${SERVER}/job/pipeline
   Wait until page contains  Jenkins
   Page should contain  Pipeline pipeline
+  Wait until page contains element  css=a[href='/job/pipeline/build?delay=0sec']
   Click link  css=a[href='/job/pipeline/build?delay=0sec']
   Wait until page contains element  css=a[href="/job/pipeline/1/"]
 
